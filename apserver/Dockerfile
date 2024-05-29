@@ -1,14 +1,8 @@
 # 開発用ステージ
-FROM python:3.11-bullseye AS developer
+FROM python:3.11-bookworm AS developer
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
-
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    bash=5.1-2+deb11u1 \
-    && apt-get -y clean \
-    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
@@ -16,7 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # ビルドステージ
-FROM python:3.11-bullseye AS builder
+FROM python:3.11-bookworm AS builder
 WORKDIR /app
 
 COPY requirements.txt ./
