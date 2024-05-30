@@ -25,7 +25,7 @@ def get_db_conn()->chromadb.HttpClient:
         )
     return client
 
-def remove_duplicates(data:list)->list:
+def remove_duplicates(data:list)->str:
     """
     入力されたリストの重複要素を削除し、sourceの値のみを出力する関数
     引数:
@@ -41,4 +41,8 @@ def remove_duplicates(data:list)->list:
             if source not in unique_sources:
                 unique_sources.append(source)
 
-    return unique_sources
+    docs = "[参考文献]"
+    for source in unique_sources:
+        docs += f"\n{source}"
+
+    return docs
