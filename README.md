@@ -1,4 +1,4 @@
-# LangChainとChromaDBによるQ&Aツール：検索拡張生成（RAG）でGemini APIを活用
+# Gemini APIを活用したLangChainとChromaDBによる検索拡張生成（RAG）Q&Aツール
 
 <p align="center">
   <img src="resources/QandA.png" alt="animated">
