@@ -30,6 +30,7 @@ def question(query: str)->str:
     return result
 
 if __name__ == "__main__":
-    query = "黒（ヘイ）について教えてください"
+    # query = "黒（ヘイ）について教えてください"
+    query = input("「darker than black」に関する質問を入力してください：")
     res = question(query)
     print(f"[質問]\n{query}\n[回答]\n{res}")
