@@ -1,6 +1,8 @@
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 import chromadb
 from chromadb.config import Settings
+import warnings
+warnings.simplefilter('ignore')
 
 def get_embedding_model()->HuggingFaceEmbeddings:
     """
