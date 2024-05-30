@@ -1,10 +1,14 @@
-from .utils import get_embedding_model, get_db_conn
+import sys
+sys.path.append('/app')
+from opt.utils.main import get_embedding_model, get_db_conn
 
-def similer_documents_search(query:str):
+def similer_documents_search(query:str)->list:
     """
     クエリの類似文書を検索する関数
     Args:
         query (str): 検索クエリ
+    戻り値:
+        クエリの類似文書を検索した値のリスト
     """
     # データベース接続とエンベディングモデルを取得
     client = get_db_conn()
@@ -19,8 +23,8 @@ def similer_documents_search(query:str):
 
 if __name__ == "__main__":
     # 類似度検索クエリ
-    query = "RAG（検索拡張生成）について簡潔に教えてください"
+    query = "黒（ヘイ）について教えてください"
     results = similer_documents_search(query)
-    print(results['documents'][0])
-    print(results['metadatas'][0])
+    print(results['documents'])
+    # print(results['metadatas'][0])
 

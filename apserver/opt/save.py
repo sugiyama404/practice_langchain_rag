@@ -2,15 +2,17 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import DirectoryLoader
 from langchain_community.vectorstores import Chroma
 
-from .utils import get_embedding_model, get_db_conn
+import sys
+sys.path.append('/app')
+from opt.utils.main import get_embedding_model, get_db_conn
 
 def save():
     """
     ドキュメントをChromaDBにインデックス化する関数
     """
     # データベース接続とエンベディングモデルを取得
-    client = get_db_conn()
     embedding_model = get_embedding_model()
+    client = get_db_conn()
 
     # ドキュメントローダーを初期化
     loader = DirectoryLoader("/app/opt/docs")

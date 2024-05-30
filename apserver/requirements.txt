@@ -5,3 +5,5 @@ llama_cpp_python==0.2.76
 unstructured==0.14.2
 sentence-transformers==3.0.0
 faiss-cpu==1.8.0
+python-dotenv==1.0.1
+google-generativeai==0.5.4
