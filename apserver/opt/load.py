@@ -26,5 +26,5 @@ if __name__ == "__main__":
     query = "黒（ヘイ）について教えてください"
     results = similer_documents_search(query)
     print(results['documents'])
-    # print(results['metadatas'][0])
+    print(results['metadatas'][0])
 
